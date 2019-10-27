@@ -1,14 +1,14 @@
 const config = {
 	"gatsby": {
 		"pathPrefix": "/",
-		"siteUrl": "https://learn.hasura.io",
+		"siteUrl": "https://sesanotes.netlify.com",
 		"gaTrackingId": null
 	},
 	"header": {
-		"logo": "https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/favicon.png",
-		"logoLink": "https://learn.hasura.io",
+		"logo": "https://raw.githubusercontent.com/sesa-uottawa/sesa-gatsby/master/src/resources/images/black-sesa-logo-simple.png",
+		"logoLink": "https://sesanotes.netlify.com",
 		"title": "SESA Notes",
-		"githubUrl": "https://github.com/hasura/gatsby-gitbook-boilerplate",
+		"githubUrl": "https://github.com/FaizChishtie/sesa-review-session-site",
 		"helpUrl": "",
 		"tweetText": "",
 		"links": [
@@ -28,17 +28,17 @@ const config = {
     		"/ITI1120"
 		],
 		"links": [
-			{ "text": "Hasura", "link": "https://hasura.io"},
+			{ "text": "SESA Website", "link": "https://https://sesa-uottawa.ca/"},
 		],
 		"frontline": false,
 		"ignoreIndex": true,
 	},
 	"siteMetadata": {
 		"title": "SESA-Notes",
-		"description": "Documentation built with mdx. Powering learn.hasura.io ",
+		"description": "SESA's academic team's note site! Get the notes/slides from review sessions here.",
 		"ogImage": null,
-		"docsLocation": "https://github.com/FaizChishtie/sesa-review-session-site",
-		"favicon": "https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg"
+		"docsLocation": "https://github.com/FaizChishtie/sesa-review-session-site/tree/master/content",
+		"favicon": "https://raw.githubusercontent.com/sesa-uottawa/sesa-gatsby/master/src/resources/images/black-sesa-logo-simple.png"
 	},
 };
 
