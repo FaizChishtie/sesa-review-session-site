@@ -142,7 +142,7 @@ export default class MDXRuntimeTest extends Component {
           </h1>
           <Edit className={'mobileView'}>
             <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
-              <img src={gitHub} alt={'Github logo'} /> Edit on GitHub
+              <img src={gitHub} alt={'Github logo'} /> View on GitHub
             </Link>
           </Edit>
         </div>

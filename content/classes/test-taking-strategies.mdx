@@ -1,0 +1,65 @@
+---
+title: "Test Taking Strategies"
+metaTitle: "Test Taking Strategies"
+metaDescription: "Test Taking Strategies for exams"
+---
+
+# ITI1120
+
+Beware, python is an easy language - the tests for this class are by no means as simple.
+
+## Multiple Choice
+
+It is imperative that you **READ QUESTIONS AND THE CODE CAREFULLY**.
+
+These multiple choice questions are not really like others. They're tricky, and will not usually be obvious - if they are, be suspicious.
+
+Read the code and relate it to what the question is asking (i.e. print/return).
+
+## Memory Models
+
+Use these to trace the execution of the program! _(Especially useful with recursion/loops))_
+
+https://realpython.com/python-memory-management/
+
+## Time Management
+
+Some questions in these evaluations will be much harder than others, it may be obvious, but hit the questions you know how to solve before trying to tackle these questions.
+
+A simple metric for knowing how much time you should be spending on a question is: 
+
+```python
+def get_total_marks(number_of_questions, marks):
+    return number_of_questions * marks
+
+def get_minute_per_mark(total_exam_minutes, total_marks):
+    metric = total_exam_minutes/total_marks
+    return "You should spend " + metric + " minutes/mark"
+```
+
+### Example: 
+
+Each exam question is 2 marks, there are 30 questions, and you have 60 minutes for the exam
+
+```python
+>>> total_marks = get_total_marks(30, 2)
+>>> print(get_minute_per_mark(60, total_marks))
+"You should spend 1 minutes/mark"
+```
+
+So if a question is 8 marks, plan to spend 8 minutes on it (or less)
+
+# General
+
+For programming classes (or any that are applicable), follow these steps:
+
+* Recognize _(What the question is asking you)_
+* Plan _(How you'll address the problem)_
+* Do _(Implement your solution)_
+
+Sometimes doing this may be overkill - so don't really waste your time using this method on questions that are **objectively** obvious.
+
+This technique can be used to validate your answers on your final look through. 
+
+
+

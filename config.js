@@ -6,7 +6,7 @@ const config = {
 	},
 	"header": {
 		"logo": "https://raw.githubusercontent.com/sesa-uottawa/sesa-gatsby/master/src/resources/images/black-sesa-logo-simple.png",
-		"logoLink": "https://sesanotes.netlify.com",
+		"logoLink": "/welcome",
 		"title": "SESA Notes",
 		"githubUrl": "https://github.com/FaizChishtie/sesa-review-session-site",
 		"helpUrl": "",
@@ -24,6 +24,7 @@ const config = {
 	},
 	"sidebar": {
 		"forcedNavOrder": [
+			"/welcome",
 			"/contribution-guide",
     		"/notes"
 		],
