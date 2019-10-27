@@ -66,6 +66,7 @@ module.exports = {
   pathPrefix: config.gatsby.pathPrefix,
   siteMetadata: {
     title: config.siteMetadata.title,
+    author: config.siteMetadata.author,
     description: config.siteMetadata.description,
     docsLocation: config.siteMetadata.docsLocation,
     ogImage: config.siteMetadata.ogImage,

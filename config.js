@@ -10,7 +10,7 @@ const config = {
 		"title": "SESA Notes",
 		"githubUrl": "https://github.com/FaizChishtie/sesa-review-session-site",
 		"helpUrl": "",
-		"tweetText": "",
+		"tweetText": "https://twitter.com/uottawasesa?lang=en",
 		"links": [
 			{ "text": "", "link": ""}
 		],
@@ -35,6 +35,7 @@ const config = {
 	},
 	"siteMetadata": {
 		"title": "SESA-Notes",
+		"author": "Faizaan Chishtie",
 		"description": "SESA's academic team's note site! Get the notes/slides from review sessions here.",
 		"ogImage": null,
 		"docsLocation": "https://github.com/FaizChishtie/sesa-review-session-site/tree/master/content",
