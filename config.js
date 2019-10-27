@@ -1,6 +1,6 @@
 const config = {
 	"gatsby": {
-		"pathPrefix": "/",
+		"pathPrefix": "/introduction",
 		"siteUrl": "https://sesanotes.netlify.com",
 		"gaTrackingId": null
 	},
@@ -25,7 +25,8 @@ const config = {
 	"sidebar": {
 		"forcedNavOrder": [
 			"/introduction",
-    		"/ITI1120"
+			"/contribution-guide",
+    		"/notes"
 		],
 		"links": [
 			{ "text": "SESA Website", "link": "https://https://sesa-uottawa.ca/"},
