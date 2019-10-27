@@ -1,6 +1,6 @@
 const config = {
 	"gatsby": {
-		"pathPrefix": "/introduction",
+		"pathPrefix": "/",
 		"siteUrl": "https://sesanotes.netlify.com",
 		"gaTrackingId": null
 	},
