@@ -29,7 +29,7 @@ const config = {
     		"/notes"
 		],
 		"links": [
-			{ "text": "SESA Website", "link": "https://https://sesa-uottawa.ca/"},
+			{ "text": "SESA Website", "link": "https://sesa-uottawa.ca/"},
 		],
 		"frontline": false,
 		"ignoreIndex": true,
