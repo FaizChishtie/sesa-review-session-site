@@ -1,0 +1,146 @@
+---
+title: "Dictionaries"
+metaTitle: "Dictionary examples"
+metaDescription: "Dictionary examples for ITI1120 review sessions"
+---
+
+Here you'll find some examples for dictionaries.
+
+# Initialization
+
+```python
+
+# open brace
+
+dict_1 = { 
+    "shirts": 15,
+    "pants": 20,
+    "socks": 12
+}
+
+# or (only if key values are strings)
+
+dict_2 = dict(
+    shirts=15,
+    pants=20,
+    socks=12
+)
+
+# or (tuple list)
+
+dict_3 = dict([ 
+    ( "shirts", 15 ), 
+    ( "pants", 20 ),
+    ( "socks", 12 )
+])
+
+print(dict_1, dict_2, dict_3)
+
+```
+
+# Indexing (Not really)
+
+Dictionaries are **not** indexed the way lists are. _(Unless you make it do so)_
+
+```python
+# Using dict 1 from the example above
+# No indexing like lists
+
+>>> dict_1[0]
+Traceback (most recent call last):
+  File "<pyshell#>", line 1, in <module>
+    dict_1[0]
+KeyError: 0
+
+# Key value retrieval
+
+>>> dict_1['shirts']
+15
+
+```
+
+Access values in dictionaries by putting the key of the obect where you'd put your index while indexing a list.
+
+```python
+    >>> any_dictionary['someKey']
+    someValue
+```
+
+# Keys/Values
+
+Some restrictions on keys and values
+
+### Keys
+
+* Keys are unique!
+* Only immutable types. _(So tuples can be used as keys)_
+
+### Values
+
+* No restrictions on values.
+* Not unique, values can repeat.
+* Put anything you want inside a dictionary value.
+
+# Insertion/Deletion
+
+```python
+# Using dict 1 from the example above
+
+# Insert by creating a new key and assigning it a value
+
+>>> dict_1['ties'] = 10
+{'shirts': 15, 'pants': 20, 'socks': 12, 'ties': 10}
+
+# Modify variables by accessing its value first (reassign the value at key after)
+
+>>> dict_1['ties'] += 15
+{'shirts': 15, 'pants': 20, 'socks': 12, 'ties': 25}
+
+# Delete obects by using 'del' keyword or by 'pop()'
+
+>>> del dict_1['ties']
+{'shirts': 15, 'pants': 20, 'socks': 12}
+>>> dict_1.pop('shirts')
+{'pants': 20, 'socks': 12}
+```
+
+# Operations
+
+```python
+
+>>> dict_1['ties'] = 15
+{'pants': 20, 'socks': 12, 'ties': 10}
+>>> 'ties' in dict_1 # in operator works like 
+True
+>>> len(dict_1)
+3
+
+```
+
+The `in` operator works like lists but specifically for **keys**.
+The `len` function gives the number of key value pairs in the dictionary.
+
+# Methods 
+
+```python
+
+# .items() -> list of tuples (key, value)
+>>> list(dict_1.items())
+[('pants', 20), ('socks', 12), ('ties', 15)]
+
+# .get( <key> ) -> value
+>>> dict_1.get('pants')
+20
+
+# .clear()
+>>> dict_1.clear()
+{}
+
+# .keys() -> list of keys
+>>> dict_1.keys()
+['pants','socks','ties']
+
+# .values() -> list of ALL values
+>>> dict_1.values()
+[20,12,15]
+```
