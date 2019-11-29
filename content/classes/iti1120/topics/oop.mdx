@@ -1,0 +1,32 @@
+---
+title: "OOP"
+metaTitle: "OOP examples"
+metaDescription: "OOP examples for ITI1120 review sessions"
+---
+
+Here you'll find some examples for object oriented programming with python.
+
+## Tesla Class
+
+```python
+class Tesla:
+
+    # static vars (apply to all objects that are instantiated)
+
+    def __init__(self, x, y):
+        self.x_coordinate = x
+        self.y_coordinate = y
+
+    def move_tesla(self, x, y):
+        self.x_coordinate = x
+        self.y_coordinate = y
+
+    def will_crash(self, truck):
+        """ (tuple) --> bool
+            truck is 2 units away from tesla then crash
+        """
+        x_diff = abs(self.x_coordinate - truck[0])
+        y_diff = abs(self.y_coordinate - truck[1])
+
+        return x_diff <=2 and y_diff <=2:
+```
