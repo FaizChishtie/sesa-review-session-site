@@ -1,0 +1,53 @@
+---
+title: "Recursion"
+metaTitle: "Recursion examples"
+metaDescription: "Recursion examples for ITI1120 review sessions"
+---
+
+Here you'll find some examples for recursion.
+
+# Recursive Functions
+
+These are some recursive functions that we'll cover in the review sessions.
+
+## Binary Search
+
+Binary search compares the target value to the middle element of the array.
+
+```python
+def binary_search(alist, start, end, key):
+    """Search key in alist[start... end - 1]."""
+    if not start < end:
+        return -1
+    mid = (start + end)//2
+    if alist[mid] < key:
+        return binary_search(alist, mid + 1, end, key)
+    elif alist[mid] > key:
+        return binary_search(alist, start, mid, key)
+    else:
+        return mid
+```
+
+## Fibonacci Sequence
+
+Fibonacci sequence written recursively.
+
+```python
+def fibonacci(n):
+    if(n <= 1):
+        return n
+    else:
+        return(fibonacci(n-1) + fibonacci(n-2))
+```
+
+## Factorial
+
+Get n factorial with this recursive function!
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+```

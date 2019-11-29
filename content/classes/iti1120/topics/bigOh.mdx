@@ -1,0 +1,109 @@
+---
+title: "BigOh"
+metaTitle: "BigOh examples"
+metaDescription: "BigOh examples for ITI1120 review sessions"
+---
+
+Here you'll find some examples for big:
+
+```
+     _____
+    /  _  \
+    | / \ |
+    | \_/ |
+    \_____/
+```
+
+# Some Functions
+
+Evaluate the runtime of these functions!
+
+## Binary Search
+
+Binary search compares the target value to the middle element of the array.
+
+```python
+def binary_search(alist, start, end, key):
+    """Search key in alist[start... end - 1]."""
+    if not start < end:
+        return -1
+    mid = (start + end)//2
+    if alist[mid] < key:
+        return binary_search(alist, mid + 1, end, key)
+    elif alist[mid] > key:
+        return binary_search(alist, start, mid, key)
+    else:
+        return mid
+```
+
+### Proof of O(logn) runtime:
+
+Let `N` be the number of items in our list.
+
+Let `x` be the number of times we need to halve our list to get to our queried item.
+
+Let `lg(a)` be the log with base 2 of the number a.
+
+------------------
+
+`1/2^x` is our factor that we 'divide' `N` by to get our 1 item.
+
+
+Therefore `1 = N/2^x`
+          
+`2^x = N`
+          
+`lg(2^x) = lg(N)`
+          
+`xlg(2) = lg(N)`
+          
+`x = lg(N)`
+
+So the number of times we need to halve our list is `lg(N)`
+
+Hence the runtime for binary search is `O(log(n))`
+
+## Fibonacci Sequence
+
+Fibonacci sequence written recursively.
+
+```python
+def fibonacci(n):
+    if(n <= 1):
+        return n
+    else:
+        return(fibonacci(n-1) + fibonacci(n-2))
+```
+
+## Factorial
+
+Get n factorial with this recursive function!
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+```
+
+## O(n)
+
+```python
+def func(n):
+	s = 0
+	for i in range(n): #in range n! 
+		s += i
+	return s
+```
+
+## O(n^2)
+
+```python
+def func(n):
+	s = 0
+	for i in range(n):
+		for j in range(n): #two range functions dependent on n
+			s += j
+	return s
+```
