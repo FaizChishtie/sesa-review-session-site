@@ -7,6 +7,7 @@ metaDescription: "BigOh examples for ITI1120 review sessions"
 Here you'll find some examples for big:
 
 ```
+    // big O  
      _____
     /  _  \
     | / \ |
@@ -18,7 +19,49 @@ Here you'll find some examples for big:
 
 Evaluate the runtime of these functions!
 
-## Binary Search
+## Examples of O(1)
+
+```python
+def func(n):
+    return n*n
+
+def func(n):
+    for i in range(5000000000000):
+        print(n)
+
+def func(n):
+    i = 50000000000000000
+    while i > 10:
+        print('wow this is going to run for a long time')
+        print('it\'s still O(1) though!')
+```
+
+## An example of O(n)
+
+Notice that there's a loop that's dependent on n!
+
+```python
+def func(n):
+	s = 0
+	for i in range(n): #in range n! 
+		s += i
+	return s
+```
+
+## An example of O(n^2)
+
+Notice that the loops are nested in this case. Meaning that we get `n*n - or n^2 (:<` iterations.
+
+```python
+def func(n):
+	s = 0
+	for i in range(n):
+		for j in range(n): #two range functions dependent on n
+			s += j
+	return s
+```
+
+## An example of O(logn)
 
 Binary search compares the target value to the middle element of the array.
 
@@ -63,7 +106,11 @@ So the number of times we need to halve our list is `lg(N)`
 
 Hence the runtime for binary search is `O(log(n))`
 
-## Fibonacci Sequence
+## Fun with recursive functions
+
+We need to trace these functions to determine their bigOh value.
+
+### Fibonacci Sequence
 
 Fibonacci sequence written recursively.
 
@@ -75,9 +122,9 @@ def fibonacci(n):
         return(fibonacci(n-1) + fibonacci(n-2))
 ```
 
-## Factorial
+### Factorial
 
-Get n factorial with this recursive function!
+We should trace this recursive function to 
 
 ```python
 def factorial(n):
@@ -85,25 +132,4 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n-1)
-```
-
-## O(n)
-
-```python
-def func(n):
-	s = 0
-	for i in range(n): #in range n! 
-		s += i
-	return s
-```
-
-## O(n^2)
-
-```python
-def func(n):
-	s = 0
-	for i in range(n):
-		for j in range(n): #two range functions dependent on n
-			s += j
-	return s
 ```
