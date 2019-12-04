@@ -1,0 +1,205 @@
+---
+title: "Inheritance"
+metaTitle: "Inheritance examples"
+metaDescription: "OOP examples for ITI1120 review sessions"
+---
+
+# About Inheritance
+
+Inheritance allows programmers to define child classes that **inherit** _(sorry there's going to be a lot of this, 
+I really dont know any other words to use in this case)_ methods and attributes from parent classes.
+
+### An easy (but somewhat innacurate) way to think about inheritance
+
+You should define a child class `C` and a parent class `P` only if by your definitions of the classes: `C` **IS A** `P`.
+
+
+
+## Inheritance
+
+```
+
+    C1
+    |
+    |
+    V
+    C2
+
+```
+
+> `C2` inherits all of `C1`'s methods and properties!
+
+`C1` is `C2`'s parent class! That means an object `C2` **is a** `C1`.
+
+Just like a `Tesla` is a `Car`.
+
+```python
+class Base:
+    pass
+
+class Derived(Base):
+    pass
+```
+
+## Multilevel Inheritance
+
+```
+
+    C1
+    |
+    V
+    C2
+    |
+    V
+    C3
+
+```
+
+> `C2` inherits all of `C1`'s methods and properties, `C3` inherits all of `C2`'s properties.
+
+`C1` is `C2`'s parent class and `C2` is `C3`'s parent class. 
+
+That means an object `C3` **is a** `C2`, and `C2` **is a** `C1`.
+
+So _inherently_ `C3` **is a** `C1`
+
+Just like a `ModelS` is a `Tesla` and `Tesla` is a `Car`.
+
+```python
+class Base:
+    pass
+
+class Derived(Base):
+    pass
+
+class EvenMoreDerived(Derived):
+    pass
+```
+
+## Multiple Inheritance
+
+> _Having started programming in Java I don't know why you'd use this but anyways_
+
+```
+
+    C1      C2
+    |       |
+    ----|----
+        V
+       C3
+
+```
+
+> `C3` inherits all of `C1` and `C2`'s methods and properties.
+
+`C1` and `C2`'s are parent classes for `C3`.
+
+That means an object `C3` **is a** `C1`, and `C3` **is a** `C2` but `C1` **is not** a `C2`.
+
+Just like a `Student` is an `Engineer` and a `Student` is a `Musician`.
+
+Where `Engineer` is not necessarily a `Musician`.
+
+```python
+class Base1:
+    pass
+
+class Base2:
+    pass
+
+class Derived(Base1, Base2):
+    pass
+```
+
+## super() and other cool things
+
+Use `super()` in your child classes to call parent classes!
+
+If you don't want to repeat functionality in your code you should use super.
+
+```python
+class Base:
+    def __init__(self, things):
+        pass
+
+    def method(self, arg)
+
+
+class Derived(Base):
+    def __init__(self, things, extra_things):
+        super().__init__(things) # calls parent class to handle 'stuff' attribute assignment
+        self.extra_things = extra_things # implement new attribute handled by 'Derived'
+
+    def method(self, arg):
+        super().method(arg)    # This does the same thing as:
+                               # super(Derived, self).method(arg)
+```
+
+### Method Resolution Order (mro)
+
+Calling `super()` from a child class will search through parent classes to find the method you're calling.
+
+For example, if `D` inherits from `B` inherits from `C` inherits from A you call `super()` in B, then super() searches `C` -> `A`.
+
+
+## Here we'll take a look at some inheritance examples!
+
+Our classes:
+
+```python
+class Car:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+    
+    def move(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def overrideMe(self):
+        print('I have not been overriden')
+    
+    def __repr__(self):
+        return 'Car {}, {}'.format(self.x, self.y)
+    
+    def honk():
+        print('beep')
+
+class Tesla(Car):
+    def __init__(self, x=0, y=0, z=0 ):
+        super().__init__(x, y)
+        self.z = z
+    
+    def charge(self):
+        print('Charging tesla!')
+        
+    def overrideMe(self):
+        print('I have been overriden')
+        
+    def __repr__(self):
+        return '{}, {}'.format(super().__repr__(), self.z)
+        
+    def move(self, x, y, z):
+        super().move(x,y)
+        self.z = z
+        
+```
+
+Try:
+
+```
+some_car = Car()
+some_tesla = Tesla()
+
+some_tesla.charge()
+
+some_tesla.move(3,4, 5)
+
+print(some_car, some_tesla)
+
+some_car.overrideMe()
+some_tesla.overrideMe()
+
+some_car.honk()
+some_tesla.honk()
+```
