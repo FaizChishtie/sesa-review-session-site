@@ -1,0 +1,88 @@
+---
+title: "JUnit"
+metaTitle: "JUnit Links"
+metaDescription: "JUnit links for ITI1121 review sessions"
+---
+
+# JUnit
+
+JUnit related topics will be covered here.
+
+## Installation
+
+Files:
+
+* [junit-4.13.jar](https://search.maven.org/remotecontent?filepath=junit/junit/4.13/junit-4.13.jar)
+* [hamcrest-1.3.jar](search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar)
+
+> I'd suggest downloading these into wherever your java folder is.
+
+### Editing Path/Environment Variables
+
+[Java's way of editing path/env variables](https://www.java.com/en/download/help/path.xml)
+
+** Windows **
+
+Go to: 
+
+`Setings> Edit the system environment variables > Environment variables > System variables > CLASSPATH`
+
+Add two entries which point to the locations of your files!
+
+i.e. `C:\Somepath\junit-4.13.jar`
+
+> Note: Replace Somepath with your file locations
+
+** Mac/Linux/Unix **
+
+You're going to have to edit the commands based on where your files are located.
+
+I'd suggest pasting the commands into a text document and modifying them before entering them in the command line.
+
+> Either run this in your terminal each new session:
+
+```
+export CLASSPATH=$CLASSPATH:Wherever your files are/junit-4.13/junit-4.13.jar:Wherever your files are/junit-4.13/hamcrest-core-1.3.jar:.
+```
+
+> Or navigate to .bash_profile and write this:
+
+```
+
+cd ~
+
+cat .bash_profile
+
+echo export CLASSPATH=$CLASSPATH:Wherever your files are/junit-4.13/junit-4.13.jar:Wherever your files are/junit-4.13/hamcrest-core-1.3.jar:. >> .bash_profile
+
+```
+
+> If you can't find .bash_profile:
+
+Make sure you're in the right directory (i.e. `cd ~`)
+    
+    
+_Try writing `l` - You should see this:_
+
+```
+
+fchishtie@MyComputerName ~ l                                                                                                                                                                                  ✔  2148  15:04:11
+    total 1112
+
+    ...
+
+    -rw-------    1 fchishtie  staff   7.1K  5 Mar  2019 .bash_history
+    -rw-r--r--    1 fchishtie  staff   593B  2 Apr  2019 .bash_profile
+
+    ...
+
+```
+
+_If you want to be cool & faster you can also write `l | grep .bash_profile` but don't worry about this too much._
+
+If you don't see that - try writing `cd ~` again & retry the commands above!
+
+
+
+
+
